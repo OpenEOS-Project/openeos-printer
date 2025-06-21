@@ -1,0 +1,13 @@
+[Unit]
+Description=OpenEOS Print Service
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/srv/openeos/openeos-printer
+ExecStart=/srv/openeos/openeos-printer/.venv/bin/python openeos-print-service.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
