@@ -74,7 +74,7 @@ def get_printer_paper_status() -> str:
     return status
 
 async def websocket_listen():
-    uri = "wss://ui.dev.openeos.de/ws/printer"
+    uri = "wss://ui.openeos.de/ws/printer"
 
     while True:
         try:
