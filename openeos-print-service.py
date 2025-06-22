@@ -3,14 +3,21 @@
 import asyncio
 import websockets
 import json
+import logging
 
 import websockets.exceptions
 
 from escpos.printer import Usb
 from datetime import datetime
 
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    filename="/var/log/openeos/print-service.log")
+
 def log(message: str):
     print(datetime.now().strftime("%Y-%m-%d %H:%M") + " " + message)
+    logging.info(message)
 
 try:
     client_details = json.load(open(".config.json", "r"))
