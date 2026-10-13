@@ -1,1 +1,7 @@
 .config.json
+
+# Python virtual environments and caches
+.venv/
+venv/
+__pycache__/
+*.pyc
